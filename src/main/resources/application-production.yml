@@ -1,0 +1,42 @@
+spring:
+  messages:
+    basename: messages
+    encoding: UTF-8
+  datasource:
+    url: jdbc:postgresql://localhost:5432/employeemanagement
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    out-of-order: true
+
+server:
+  port: 8081
+
+app:
+  server:
+    timezone: America/New_York
+  timezones:
+    NG: Africa/Lagos
+    US: America/New_York
+    IN: Asia/Kolkata
+    UK: Europe/London
+  internationalization:
+    defaultCountryCode: US
+    supportedCountryCodes:
+      - NG
+      - US
+      - IN
+      - UK
+    defaultLocale: en_US
+
+
